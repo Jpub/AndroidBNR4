@@ -1,0 +1,2 @@
+rootProject.name = "BeatBox"
+include ':app'
