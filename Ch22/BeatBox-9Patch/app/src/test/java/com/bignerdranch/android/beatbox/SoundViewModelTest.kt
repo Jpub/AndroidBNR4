@@ -1,10 +1,8 @@
 package com.bignerdranch.android.beatbox
 
-//import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.core.Is.`is`
-import org.junit.Assert.assertThat
 import org.junit.Before
-
+import org.hamcrest.core.Is.`is`
+import org.junit.Assert.*
 import org.junit.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
@@ -21,7 +19,6 @@ class SoundViewModelTest {
         sound = Sound("assetPath")
         subject = SoundViewModel(beatBox)
         subject.sound = sound
-
     }
 
     @Test

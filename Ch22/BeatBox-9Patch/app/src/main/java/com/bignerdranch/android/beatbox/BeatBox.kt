@@ -11,10 +11,11 @@ private const val SOUNDS_FOLDER = "sample_sounds"
 private const val MAX_SOUNDS = 5
 
 class BeatBox(private val assets: AssetManager) {
+
     val sounds: List<Sound>
     private val soundPool = SoundPool.Builder()
-        .setMaxStreams(MAX_SOUNDS)
-        .build()
+            .setMaxStreams(MAX_SOUNDS)
+            .build()
 
     init {
         sounds = loadSounds()
@@ -30,7 +31,8 @@ class BeatBox(private val assets: AssetManager) {
         soundPool.release()
     }
 
-    private fun loadSounds(): List<Sound>  {
+    private fun loadSounds(): List<Sound> {
+
         val soundNames: Array<String>
 
         try {
@@ -43,6 +45,7 @@ class BeatBox(private val assets: AssetManager) {
         soundNames.forEach { filename ->
             val assetPath = "$SOUNDS_FOLDER/$filename"
             val sound = Sound(assetPath)
+
             try {
                 load(sound)
                 sounds.add(sound)
@@ -58,5 +61,4 @@ class BeatBox(private val assets: AssetManager) {
         val soundId = soundPool.load(afd, 1)
         sound.soundId = soundId
     }
-
 }
