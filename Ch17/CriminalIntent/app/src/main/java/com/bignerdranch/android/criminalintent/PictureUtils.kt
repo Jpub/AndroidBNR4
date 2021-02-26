@@ -7,6 +7,8 @@ import android.graphics.Point
 
 fun getScaledBitmap(path: String, activity: Activity): Bitmap {
     val size = Point()
+
+    @Suppress("DEPRECATION")
     activity.windowManager.defaultDisplay.getSize(size)
     return getScaledBitmap(path, size.x, size.y)
 }
